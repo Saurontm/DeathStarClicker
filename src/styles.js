@@ -17,7 +17,7 @@ export const LogoImage = styled.img`
 export const Score = styled.h1`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
-  font-size: 350%;
+  font-size: 400%;
 `;
 
 export const Description = styled.h4`
