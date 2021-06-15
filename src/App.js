@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import HomePage from "./Components/Home";
+import { GlobalStyle } from "./styles";
+const theme = {
+  mainColor: "white",
+  backgroundColor: "#070C1C",
+  secondaryColor: "#606986",
+  fontFamily: "Roboto",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <HomePage></HomePage>
+      </ThemeProvider>
     </div>
   );
 }
