@@ -30,7 +30,7 @@ function HomePage() {
           </Purchase>
           <Purchase>
             <AwesomeButton type="secondary">Call TIE Fighter</AwesomeButton>
-            <CurrentRate>Destroy 5 planets per second</CurrentRate>
+            <CurrentRate>Destroy double the planets per second</CurrentRate>
           </Purchase>
         </PurchasesWrapper>
       </GameWrapper>
