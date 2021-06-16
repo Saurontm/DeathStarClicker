@@ -25,7 +25,9 @@ function HomePage() {
       </a>
       <GameWrapper>
         <Scoring score={score} addToScore={addToScore}></Scoring>
-        <CurrentRate>{planetPerClick} planet per click</CurrentRate>
+        <CurrentRate>
+          {planetPerClick} {planetPerClick > 1 ? "planets" : "planet"} per click
+        </CurrentRate>
         <PurchasesList
           score={score}
           deductFromScore={deductFromScore}

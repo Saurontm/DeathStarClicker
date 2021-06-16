@@ -10,7 +10,9 @@ const Scoring = (props) => {
   return (
     <div>
       <Score>{props.score}</Score>
-      <Description>Planets Destroyed</Description>
+      <Description>
+        {props.score === 1 ? "Planet" : "Planets"} Destroyed
+      </Description>
       <AwesomeButton
         type="primary"
         className="gameButton"
