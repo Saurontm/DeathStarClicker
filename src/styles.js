@@ -28,6 +28,16 @@ export const Description = styled.h4`
   }
 `;
 
+export const Credit = styled.h4`
+  color: ${(props) => props.theme.mainColor};
+  text-align: right;
+  font-size: 250%;
+  margin-top: -100px; 
+  ${"" /* margin-bottom: 15px;  */}
+  margin-right: 45px; 
+  }
+`;
+
 export const CurrentRate = styled.p`
   color: ${(props) => props.theme.secondaryColor};
   text-align: center;
@@ -49,7 +59,7 @@ export const PurchasesWrapper = styled.div`
   display: flex; /* allows us to use Flexbox */
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 150px;
+  margin-top: 100px;
   }
 `;
 

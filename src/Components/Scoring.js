@@ -5,7 +5,8 @@ import "../buttonStyles.css";
 
 const Scoring = (props) => {
   const handleUpdate = () => {
-    props.updater("add", props.planetPerClick);
+    props.addToScore(props.planetPerClick);
+    props.changeCredit("add", props.planetPerClick);
   };
   return (
     <div>

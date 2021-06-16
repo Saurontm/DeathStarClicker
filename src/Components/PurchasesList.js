@@ -8,12 +8,12 @@ const PurchasesList = (props) => {
     <PurchasesWrapper>
       <Purchases
         score={props.score}
-        updater={props.updater}
+        credit={props.credit}
+        changeCredit={props.changeCredit}
         planetPerClick={props.planetPerClick}
         increasePerClick={props.increasePerClick}
         planetPerSecond={props.planetPerSecond}
         updateRate={props.updateRate}
-        incrementScorePerRate={props.incrementScorePerRate}
       ></Purchases>
     </PurchasesWrapper>
   );
