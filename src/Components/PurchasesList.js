@@ -4,14 +4,16 @@ import "../buttonStyles.css";
 import Purchases from "./Purchases";
 
 const PurchasesList = (props) => {
-  console.log(props.planetPerClick);
   return (
     <PurchasesWrapper>
       <Purchases
         score={props.score}
-        deductFromScore={props.deductFromScore}
+        updater={props.updater}
         planetPerClick={props.planetPerClick}
         increasePerClick={props.increasePerClick}
+        planetPerSecond={props.planetPerSecond}
+        updateRate={props.updateRate}
+        incrementScorePerRate={props.incrementScorePerRate}
       ></Purchases>
     </PurchasesWrapper>
   );

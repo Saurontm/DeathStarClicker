@@ -11,9 +11,12 @@ const Purchases = (props) => {
       <Purchase
         upgrade={upgrade}
         score={props.score}
-        deductFromScore={props.deductFromScore}
+        updater={props.updater}
         planetPerClick={props.planetPerClick}
         increasePerClick={props.increasePerClick}
+        planetPerSecond={props.planetPerSecond}
+        updateRate={props.updateRate}
+        incrementScorePerRate={props.incrementScorePerRate}
       ></Purchase>
     ));
   return <PurchasesStyled>{purchases}</PurchasesStyled>;

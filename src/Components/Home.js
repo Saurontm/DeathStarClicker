@@ -9,13 +9,47 @@ import { useState } from "react";
 function HomePage() {
   const [score, updateScore] = useState(0);
   const [planetPerClick, increasePerClick] = useState(1);
+  const [planetPerSecond, increasePerSecond] = useState(1);
 
-  const addToScore = () => {
-    updateScore(score + planetPerClick);
+  // const incrementScore = () => {
+  //   addToScore(planetPerClick);
+  // };
+
+  const addToScore = (amount) => {
+    console.log("now adding");
+    console.log(amount);
+    updateScore(score + amount);
+    console.log("new score");
+    console.log(score);
+  };
+
+  const updater = (type, amount) => {
+    switch (type) {
+      case "add":
+        addToScore(amount);
+        break;
+
+      case "deduct":
+        deductFromScore(amount);
+        break;
+
+      default:
+        break;
+    }
   };
 
   const deductFromScore = (amount) => {
     updateScore(score - amount);
+  };
+
+  const updateRate = (amount) => {
+    increasePerSecond(planetPerSecond + amount);
+  };
+
+  const incrementScorePerRate = () => {
+    setInterval(() => {
+      updateScore(score + planetPerSecond);
+    }, 1000);
   };
 
   return (
@@ -24,15 +58,25 @@ function HomePage() {
         <LogoImage id="logo" src={logo} alt="THE DEATH STAR" />
       </a>
       <GameWrapper>
-        <Scoring score={score} addToScore={addToScore}></Scoring>
+        <Scoring
+          score={score}
+          updater={updater}
+          planetPerClick={planetPerClick}
+        ></Scoring>
         <CurrentRate>
-          {planetPerClick} {planetPerClick > 1 ? "planets" : "planet"} per click
+          {planetPerClick} {planetPerClick > 1 ? "planets" : "planet"} per click{" "}
+          {planetPerSecond > 1
+            ? ", " + planetPerSecond + " planets per second"
+            : ""}
         </CurrentRate>
         <PurchasesList
           score={score}
-          deductFromScore={deductFromScore}
+          updater={updater}
           increasePerClick={increasePerClick}
           planetPerClick={planetPerClick}
+          planetPerSecond={planetPerSecond}
+          updateRate={updateRate}
+          incrementScorePerRate={incrementScorePerRate}
         ></PurchasesList>
       </GameWrapper>
     </div>
