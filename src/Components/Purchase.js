@@ -14,7 +14,7 @@ const Purchase = (props) => {
       props.increasePerClick(props.upgrade.update(props.planetPerClick));
     } else if (props.upgrade.type === "perSecond") {
       props.updateRate(props.upgrade.update(props.planetPerSecond));
-      props.incrementScorePerRate();
+      // props.incrementScorePerRate();
       console.log(props.planetPerSecond);
     }
   };

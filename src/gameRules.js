@@ -33,7 +33,16 @@ const rules = [
     type: "perSecond",
     title: "Call TIE Fighter",
     description: "Destroys 2 planets per second for 50 planets",
-    update: (planetPerSecond) => planetPerSecond * 2,
+    update: (planetPerSecond) => planetPerSecond + 2,
+  },
+  {
+    id: 5,
+    status: true,
+    cost: 100,
+    type: "perSecond",
+    title: "Call TIE Fighter",
+    description: "Destroys 4 more planets per second for 100 planets",
+    update: (planetPerSecond) => planetPerSecond + 4,
   },
 ];
 export default rules;

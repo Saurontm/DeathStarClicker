@@ -4,12 +4,12 @@ import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import PurchasesList from "./PurchasesList";
 import Scoring from "./Scoring";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
   const [planetPerClick, increasePerClick] = useState(1);
-  const [planetPerSecond, increasePerSecond] = useState(1);
+  const [planetPerSecond, increasePerSecond] = useState(0);
 
   // const incrementScore = () => {
   //   addToScore(planetPerClick);
@@ -52,6 +52,13 @@ function HomePage() {
     }, 1000);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      updateScore((score) => score + planetPerSecond);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [planetPerSecond]);
+
   return (
     <div>
       <a href=".">
@@ -65,7 +72,7 @@ function HomePage() {
         ></Scoring>
         <CurrentRate>
           {planetPerClick} {planetPerClick > 1 ? "planets" : "planet"} per click{" "}
-          {planetPerSecond > 1
+          {planetPerSecond > 0
             ? ", " + planetPerSecond + " planets per second"
             : ""}
         </CurrentRate>
