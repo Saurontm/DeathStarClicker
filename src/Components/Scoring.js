@@ -3,12 +3,19 @@ import { Score, Description } from "../styles";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 
-const Scoring = () => {
+const Scoring = (props) => {
+  const handleUpdate = () => {
+    props.addToScore();
+  };
   return (
     <div>
-      <Score> 10 </Score>
+      <Score>{props.score}</Score>
       <Description>Planets Destroyed</Description>
-      <AwesomeButton type="primary" className="gameButton">
+      <AwesomeButton
+        type="primary"
+        className="gameButton"
+        onPress={() => handleUpdate()}
+      >
         Destroy Planet
       </AwesomeButton>
     </div>

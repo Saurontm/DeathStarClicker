@@ -49,7 +49,7 @@ export const PurchasesWrapper = styled.div`
   display: flex; /* allows us to use Flexbox */
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 150px;
   }
 `;
 
