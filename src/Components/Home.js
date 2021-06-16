@@ -8,10 +8,14 @@ import { useState } from "react";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
-  let planetPerClick = 1;
+  const [planetPerClick, increasePerClick] = useState(1);
 
   const addToScore = () => {
     updateScore(score + planetPerClick);
+  };
+
+  const deductFromScore = (amount) => {
+    updateScore(score - amount);
   };
 
   return (
@@ -21,8 +25,13 @@ function HomePage() {
       </a>
       <GameWrapper>
         <Scoring score={score} addToScore={addToScore}></Scoring>
-        <CurrentRate>1 planet per click</CurrentRate>
-        <PurchasesList></PurchasesList>
+        <CurrentRate>{planetPerClick} planet per click</CurrentRate>
+        <PurchasesList
+          score={score}
+          deductFromScore={deductFromScore}
+          increasePerClick={increasePerClick}
+          planetPerClick={planetPerClick}
+        ></PurchasesList>
       </GameWrapper>
     </div>
   );
