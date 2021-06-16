@@ -4,13 +4,12 @@ import {
   GameWrapper,
   Score,
   Description,
-  PurchasesWrapper,
   CurrentRate,
-  Purchase,
 } from "../styles";
 import logo from "../the-death-star.png";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
+import PurchasesList from "./PurchasesList";
 
 function HomePage() {
   return (
@@ -23,16 +22,7 @@ function HomePage() {
           Destroy Planet
         </AwesomeButton>
         <CurrentRate>1 planet per click, 1 planet per second</CurrentRate>
-        <PurchasesWrapper>
-          <Purchase>
-            <AwesomeButton type="secondary">Increase Laser Power</AwesomeButton>
-            <CurrentRate>Destroy double the planets</CurrentRate>
-          </Purchase>
-          <Purchase>
-            <AwesomeButton type="secondary">Call TIE Fighter</AwesomeButton>
-            <CurrentRate>Destroy double the planets per second</CurrentRate>
-          </Purchase>
-        </PurchasesWrapper>
+        <PurchasesList></PurchasesList>
       </GameWrapper>
     </div>
   );

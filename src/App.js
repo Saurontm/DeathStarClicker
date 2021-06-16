@@ -2,6 +2,7 @@ import "./App.css";
 import { ThemeProvider } from "styled-components";
 import HomePage from "./Components/Home";
 import { GlobalStyle } from "./styles";
+
 const theme = {
   mainColor: "white",
   backgroundColor: "#070C1C",

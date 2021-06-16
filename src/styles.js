@@ -9,28 +9,29 @@ body{
 export const LogoImage = styled.img`
   height: 130px;
   width: Auto;
-  margin-top: 35px;
-  margin-left: 35px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
 `;
 
 export const Score = styled.h1`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
-  font-size: 400%;
+  font-size: 100px;
 `;
 
 export const Description = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
   font-size: 100%;
-  margin-top: -40px; 
+  margin-top: -80px; 
+  margin-bottom: 15px; 
   }
 `;
 
 export const CurrentRate = styled.p`
   color: ${(props) => props.theme.secondaryColor};
   text-align: center;
+  margin-top: 3px; 
 
   }
 `;
@@ -48,11 +49,11 @@ export const PurchasesWrapper = styled.div`
   display: flex; /* allows us to use Flexbox */
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 150px;
+  margin-top: 50px;
   }
 `;
 
-export const Purchase = styled.div`
+export const PurchasesStyled = styled.div`
    display: "flex"
   align-content: center;
   margin-left: auto;
