@@ -31,7 +31,7 @@ export const Description = styled.h4`
 export const CurrentRate = styled.p`
   color: ${(props) => props.theme.secondaryColor};
   text-align: center;
-  margin-top: 3px; 
+  margin-top: 4px; 
 
   }
 `;
