@@ -1,5 +1,6 @@
 import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
 import logo from "../the-death-star.png";
+
 import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
@@ -34,8 +35,8 @@ function HomePage() {
   };
 
   const handleClose = () => {
-    updateAchievement(achievementReached + 1);
     setOpen(false);
+    updateAchievement(achievementReached + 1);
   };
 
   const addToScore = (amount) => {
@@ -122,7 +123,9 @@ function HomePage() {
           <DialogContentText id="alert-dialog-description">
             {achievements[achievementReached].description}
           </DialogContentText>
+          <DialogContent></DialogContent>
         </DialogContent>
+        {achievements[achievementReached].gif}
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             {achievements[achievementReached].buttonText}
