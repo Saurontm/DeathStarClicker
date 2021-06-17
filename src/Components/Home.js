@@ -30,7 +30,7 @@ function HomePage() {
   const [isExploding, setIsExploding] = React.useState(false);
   const bigExplodeProps = {
     force: 0.6,
-    duration: 2000,
+    duration: 5000,
     particleCount: 200,
     floorHeight: 700,
     floorWidth: 700,
@@ -61,7 +61,6 @@ function HomePage() {
   };
 
   const addToScore = (amount) => {
-    // checkForAcheivement();
     setIsExploding(false);
     updateScore(score + amount);
   };
@@ -102,6 +101,7 @@ function HomePage() {
   }, [planetPerSecond]);
 
   useEffect(() => {
+    setIsExploding(false);
     checkForAcheivement();
   }, [score]);
 
