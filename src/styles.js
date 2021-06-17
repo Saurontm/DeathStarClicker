@@ -16,15 +16,15 @@ export const LogoImage = styled.img`
 export const Score = styled.h1`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
-  font-size: 100px;
+  font-size: 150px;
 `;
 
 export const Description = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
   font-size: 100%;
-  margin-top: -80px; 
-  margin-bottom: 15px; 
+  margin-top: -120px; 
+  margin-bottom: 20px; 
   }
 `;
 
@@ -32,8 +32,8 @@ export const UpgradesTitle = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: left;
   font-size: 170%;
-  margin-top: -50px; 
-  margin-bottom: 15px; 
+  margin-top: -60px; 
+  margin-bottom: -15px; 
   margin-left: 45px; 
   }
 `;
@@ -42,7 +42,7 @@ export const Credit = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: right;
   font-size: 250%;
-  margin-top: -100px; 
+  margin-top: -30px; 
   margin-right: 45px; 
   }
 `;
