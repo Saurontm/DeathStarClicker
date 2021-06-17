@@ -3,6 +3,7 @@ import gif2 from "./wipe-them-out-all-of-them.gif";
 import gif3 from "./execute-order-sixty-six.gif";
 import gif4 from "./darth-vader.gif";
 import gif5 from "./unlimited-power.gif";
+import gif6 from "./game-over.gif";
 
 const achievements = [
   {
@@ -55,6 +56,16 @@ const achievements = [
     planets: 10000,
     buttonText: "Unlimited Power!",
     gif: <img id="gif5" src={gif5} alt="gif" />,
+  },
+  {
+    id: 6,
+    title: "Game over",
+    description:
+      "Congratulations. You are now the ruler of an empty galaxy, no more planets to destroy.",
+    name: "Emperor",
+    planets: 15000,
+    buttonText: "Reset game",
+    gif: <img id="gif6" src={gif6} alt="gif" />,
   },
 ];
 export default achievements;

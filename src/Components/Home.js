@@ -36,7 +36,11 @@ function HomePage() {
   const handleClose = () => {
     setOpen(false);
     setTimeout(1000);
-    if (achievementReached !== 4) updateAchievement(achievementReached + 1);
+    if (achievementReached !== 5) {
+      updateAchievement(achievementReached + 1);
+    } else {
+      window.location.reload(false);
+    }
   };
 
   const addToScore = (amount) => {
