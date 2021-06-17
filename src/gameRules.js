@@ -29,6 +29,7 @@ const rules = [
   },
   {
     id: 4,
+    opens: 7,
     status: true,
     cost: 50,
     type: "perSecond",
@@ -54,6 +55,16 @@ const rules = [
     description:
       "Destroys 10 more planets per second for 1000 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 10,
+  },
+
+  {
+    id: 7,
+    status: false,
+    cost: 55,
+    type: "perSecond",
+    title: "Call additional TIE Fighter",
+    description: "Destroys 2 more planets per second for 55 Galactic Credits",
+    update: (planetPerSecond) => planetPerSecond + 2,
   },
 ];
 export default rules;

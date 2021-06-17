@@ -32,8 +32,11 @@ function HomePage() {
     }
   };
 
-  const updateRate = (amount) => {
-    increasePerSecond(planetPerSecond + amount);
+  const updateRate = (planetPerSecond) => {
+    // console.log(amount);
+    // console.log(planetPerSecond);
+    // increasePerSecond(planetPerSecond + amount);
+    increasePerSecond(planetPerSecond);
   };
 
   useEffect(() => {
