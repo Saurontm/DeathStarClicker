@@ -43,7 +43,7 @@ export const Credit = styled.h4`
   text-align: right;
   font-size: 250%;
   margin-top: -30px; 
-  margin-right: 45px; 
+  margin-right: 30px; 
   }
 `;
 
