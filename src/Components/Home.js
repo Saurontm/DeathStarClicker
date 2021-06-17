@@ -1,6 +1,5 @@
 import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
 import logo from "../the-death-star.png";
-
 import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
@@ -36,7 +35,8 @@ function HomePage() {
 
   const handleClose = () => {
     setOpen(false);
-    updateAchievement(achievementReached + 1);
+    setTimeout(1000);
+    if (achievementReached !== 4) updateAchievement(achievementReached + 1);
   };
 
   const addToScore = (amount) => {

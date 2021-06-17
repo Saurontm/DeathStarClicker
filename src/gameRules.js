@@ -11,7 +11,7 @@ const rules = [
   {
     id: 2,
     status: true,
-    cost: 30,
+    cost: 50,
     type: "perClick",
     title: "Force choke an annoying admiral",
     description: "Triples planets destroyed per click for 30 Galactic Credits",
@@ -20,6 +20,7 @@ const rules = [
   {
     id: 3,
     status: true,
+    opens: 9,
     cost: 70,
     type: "perClick",
     title: "Increase Superlaser Power",
@@ -31,7 +32,7 @@ const rules = [
     id: 4,
     opens: 7,
     status: true,
-    cost: 50,
+    cost: 100,
     type: "perSecond",
     title: "Call TIE Fighter",
     description: "Destroys 2 planets per second for 50 Galactic Credits",
@@ -40,7 +41,8 @@ const rules = [
   {
     id: 5,
     status: true,
-    cost: 100,
+    opens: 8,
+    cost: 200,
     type: "perSecond",
     title: "Call Command Cruiser",
     description: "Destroys 4 more planets per second for 100 Galactic Credits",
@@ -60,11 +62,31 @@ const rules = [
   {
     id: 7,
     status: false,
-    cost: 55,
+    cost: 500,
     type: "perSecond",
-    title: "Call additional TIE Fighter",
-    description: "Destroys 2 more planets per second for 55 Galactic Credits",
-    update: (planetPerSecond) => planetPerSecond + 2,
+    title: "Call additional TIE Fighters",
+    description: "Destroys 4 more planets per second for 500 Galactic Credits",
+    update: (planetPerSecond) => planetPerSecond + 4,
+  },
+
+  {
+    id: 8,
+    status: false,
+    cost: 800,
+    type: "perSecond",
+    title: "Call additional Command Cruisers",
+    description: "Destroys 8 more planets per second for 800 Galactic Credits",
+    update: (planetPerSecond) => planetPerSecond + 8,
+  },
+  {
+    id: 9,
+    status: false,
+    cost: 2000,
+    type: "perClick",
+    title: "Double Superlaser Power",
+    description:
+      "Doubles effect of current SuperLaser for 2000 Galactic Credits",
+    update: (planetPerClick) => planetPerClick * 8,
   },
 ];
 export default rules;

@@ -29,7 +29,7 @@ const achievements = [
     id: 3,
     title: "Execute Order Sixty-Six!",
     description:
-      "500 planets and counting. Congratulations on getting the Lord achievement.",
+      "1000 planets and counting. Congratulations on getting the Lord achievement.",
     name: "Lord",
     planets: 1000,
     buttonText: "Not done yet!",
