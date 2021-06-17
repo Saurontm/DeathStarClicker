@@ -33,7 +33,6 @@ export const Credit = styled.h4`
   text-align: right;
   font-size: 250%;
   margin-top: -100px; 
-  ${"" /* margin-bottom: 15px;  */}
   margin-right: 45px; 
   }
 `;
