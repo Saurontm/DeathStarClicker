@@ -1,19 +1,45 @@
 import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
 import logo from "../the-death-star.png";
+import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import PurchasesList from "./PurchasesList";
 import Scoring from "./Scoring";
 import React, { useState, useEffect } from "react";
 import { BiCoinStack } from "react-icons/bi";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Button from "@material-ui/core/Button";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
+  const [achievementReached, updateAchievement] = useState(0);
   const [credit, updateCredit] = useState(0);
   const [planetPerClick, increasePerClick] = useState(1);
   const [planetPerSecond, increasePerSecond] = useState(0);
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const checkForAcheivement = () => {
+    if (score >= achievements[achievementReached].planets - 1) {
+      handleClickOpen();
+    }
+  };
+
+  const handleClose = () => {
+    updateAchievement(achievementReached + 1);
+    setOpen(false);
+  };
+
   const addToScore = (amount) => {
+    checkForAcheivement();
     updateScore(score + amount);
   };
 
@@ -33,9 +59,6 @@ function HomePage() {
   };
 
   const updateRate = (planetPerSecond) => {
-    // console.log(amount);
-    // console.log(planetPerSecond);
-    // increasePerSecond(planetPerSecond + amount);
     increasePerSecond(planetPerSecond);
   };
 
@@ -86,6 +109,26 @@ function HomePage() {
           updateRate={updateRate}
         ></PurchasesList>
       </GameWrapper>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {achievements[achievementReached].title}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {achievements[achievementReached].description}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            {achievements[achievementReached].buttonText}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

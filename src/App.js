@@ -1,4 +1,6 @@
 import "./App.css";
+import "react-awesome-button/dist/styles.css";
+import "./buttonStyles.css";
 import { ThemeProvider } from "styled-components";
 import HomePage from "./Components/Home";
 import { GlobalStyle } from "./styles";

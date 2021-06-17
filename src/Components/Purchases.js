@@ -1,4 +1,4 @@
-import { PurchasesStyled, Description, UpgradesTitle } from "../styles";
+import { PurchasesStyled, UpgradesTitle } from "../styles";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import Purchase from "./Purchase";
