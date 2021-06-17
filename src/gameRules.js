@@ -35,7 +35,7 @@ const rules = [
     cost: 300,
     type: "perSecond",
     title: "Call TIE Fighter",
-    description: "Destroys 2 planets per second for 50 Galactic Credits",
+    description: "Destroys 2 planets per second for 300 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 2,
   },
   {
@@ -45,7 +45,7 @@ const rules = [
     cost: 500,
     type: "perSecond",
     title: "Call Command Cruiser",
-    description: "Destroys 4 more planets per second for 100 Galactic Credits",
+    description: "Destroys 4 more planets per second for 500 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 4,
   },
   {
@@ -65,7 +65,7 @@ const rules = [
     cost: 600,
     type: "perSecond",
     title: "Call additional TIE Fighters",
-    description: "Destroys 4 more planets per second for 500 Galactic Credits",
+    description: "Destroys 4 more planets per second for 600 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 4,
   },
 
