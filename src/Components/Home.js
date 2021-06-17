@@ -1,4 +1,10 @@
-import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
+import {
+  LogoImage,
+  GameWrapper,
+  CurrentRate,
+  Credit,
+  Description,
+} from "../styles";
 import logo from "../the-death-star.png";
 import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
@@ -13,6 +19,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
+import ConfettiExplosion from "@reonomy/react-confetti-explosion";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
@@ -20,10 +27,19 @@ function HomePage() {
   const [credit, updateCredit] = useState(0);
   const [planetPerClick, increasePerClick] = useState(1);
   const [planetPerSecond, increasePerSecond] = useState(0);
+  const [isExploding, setIsExploding] = React.useState(false);
+  const bigExplodeProps = {
+    force: 0.6,
+    duration: 2000,
+    particleCount: 200,
+    floorHeight: 700,
+    floorWidth: 700,
+  };
 
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
+    setIsExploding(!isExploding);
     setOpen(true);
   };
 
@@ -36,6 +52,7 @@ function HomePage() {
   const handleClose = () => {
     setOpen(false);
     setTimeout(1000);
+
     if (achievementReached !== 5) {
       updateAchievement(achievementReached + 1);
     } else {
@@ -45,6 +62,7 @@ function HomePage() {
 
   const addToScore = (amount) => {
     // checkForAcheivement();
+    setIsExploding(false);
     updateScore(score + amount);
   };
 
@@ -56,6 +74,8 @@ function HomePage() {
 
       case "deduct":
         updateCredit(credit - amount);
+        // setIsExploding(!isExploding);
+
         break;
 
       default:
@@ -107,6 +127,7 @@ function HomePage() {
             ? ", " + planetPerSecond + " planets per second"
             : ""}
         </CurrentRate>
+
         <PurchasesList
           score={score}
           credit={credit}
@@ -133,6 +154,17 @@ function HomePage() {
           </DialogContentText>
           <DialogContent></DialogContent>
         </DialogContent>
+        {isExploding && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <ConfettiExplosion {...bigExplodeProps} />
+          </div>
+        )}
         {achievements[achievementReached].gif}
         <DialogActions>
           <Button onClick={handleClose} color="primary">
