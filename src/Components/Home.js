@@ -28,7 +28,7 @@ function HomePage() {
   };
 
   const checkForAcheivement = () => {
-    if (score >= achievements[achievementReached].planets - 1) {
+    if (score >= achievements[achievementReached].planets) {
       handleClickOpen();
     }
   };
@@ -44,7 +44,7 @@ function HomePage() {
   };
 
   const addToScore = (amount) => {
-    checkForAcheivement();
+    // checkForAcheivement();
     updateScore(score + amount);
   };
 
@@ -80,6 +80,10 @@ function HomePage() {
     }, 1000);
     return () => clearInterval(interval);
   }, [planetPerSecond]);
+
+  useEffect(() => {
+    checkForAcheivement();
+  }, [score]);
 
   return (
     <div>
