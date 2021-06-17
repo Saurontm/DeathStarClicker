@@ -20,7 +20,7 @@ const Purchase = (props) => {
     }
   };
   return (
-    <div>
+    <div style={{ float: "left", padding: 30 }}>
       <AwesomeButton type="secondary" onPress={() => buyUpgrade()}>
         {props.upgrade.title}
       </AwesomeButton>

@@ -28,6 +28,16 @@ export const Description = styled.h4`
   }
 `;
 
+export const UpgradesTitle = styled.h4`
+  color: ${(props) => props.theme.mainColor};
+  text-align: left;
+  font-size: 170%;
+  margin-top: -50px; 
+  margin-bottom: 15px; 
+  margin-left: 45px; 
+  }
+`;
+
 export const Credit = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: right;
@@ -40,7 +50,7 @@ export const Credit = styled.h4`
 export const CurrentRate = styled.p`
   color: ${(props) => props.theme.secondaryColor};
   text-align: center;
-  margin-top: 4px; 
+  margin-top: 10px; 
 
   }
 `;
@@ -55,17 +65,15 @@ export const GameWrapper = styled.div`
 `;
 
 export const PurchasesWrapper = styled.div`
-  display: flex; /* allows us to use Flexbox */
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: "flex"
+  justify-content: space-around;
   margin-top: 100px;
   }
 `;
 
 export const PurchasesStyled = styled.div`
-   display: "flex"
-  align-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: "flex"
+  justify-content: space-around;
+ 
   }
 `;

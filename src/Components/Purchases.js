@@ -1,4 +1,4 @@
-import { PurchasesStyled } from "../styles";
+import { PurchasesStyled, Description, UpgradesTitle } from "../styles";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import Purchase from "./Purchase";
@@ -18,7 +18,17 @@ const Purchases = (props) => {
         updateRate={props.updateRate}
       ></Purchase>
     ));
-  return <PurchasesStyled>{purchases}</PurchasesStyled>;
+  return (
+    <div>
+      {purchases.length > 0 ? (
+        <UpgradesTitle> Available upgrades: </UpgradesTitle>
+      ) : (
+        ""
+      )}
+
+      <PurchasesStyled>{purchases}</PurchasesStyled>
+    </div>
+  );
 };
 
 export default Purchases;

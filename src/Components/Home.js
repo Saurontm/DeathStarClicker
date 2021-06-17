@@ -6,7 +6,6 @@ import PurchasesList from "./PurchasesList";
 import Scoring from "./Scoring";
 import React, { useState, useEffect } from "react";
 import { BiCoinStack } from "react-icons/bi";
-import AnimatedNumber from "react-animated-numbers";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
