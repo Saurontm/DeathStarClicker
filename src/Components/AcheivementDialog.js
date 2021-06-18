@@ -49,13 +49,13 @@ const AcheivementDialog = (props) => {
       <DialogTitle id="alert-dialog-title">
         {achievements[achievementReached].title}
       </DialogTitle>
+      <Confetti></Confetti>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           {achievements[achievementReached].description}
         </DialogContentText>
         <DialogContent></DialogContent>
       </DialogContent>
-      <Confetti></Confetti>
       {achievements[achievementReached].gif}
       <DialogActions>
         <Button onClick={handleClose} color="primary">

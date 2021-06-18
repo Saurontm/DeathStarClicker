@@ -8,12 +8,12 @@ class Confetti extends React.Component {
   render() {
     const bigExplodeProps = {
       force: 0.6,
-      duration: 4000,
+      particleSize: 10,
+      duration: 3000,
       particleCount: 200,
-      floorHeight: 600,
+      floorHeight: 500,
       floorWidth: 600,
     };
-
     return (
       <div
         style={{
@@ -27,5 +27,4 @@ class Confetti extends React.Component {
     );
   }
 }
-
 export default Confetti;
