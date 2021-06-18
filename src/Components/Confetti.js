@@ -2,7 +2,7 @@ import ConfettiExplosion from "@reonomy/react-confetti-explosion";
 import React from "react";
 
 class Confetti extends React.Component {
-  shouldComponentUpdate(_nextProps, _nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     return false;
   }
   render() {
@@ -10,9 +10,9 @@ class Confetti extends React.Component {
     const bigExplodeProps = {
       force: 0.6,
       particleSize: 10,
-      duration: 2000,
+      duration: 3000,
       particleCount: 200,
-      floorHeight: this.props.height + 180,
+      floorHeight: 500,
       floorWidth: 600,
     };
     return (

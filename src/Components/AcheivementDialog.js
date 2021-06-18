@@ -29,7 +29,7 @@ const AcheivementDialog = (props) => {
 
   const handleClose = () => {
     setOpen(false);
-
+    setTimeout(1000);
     if (achievementReached !== 5) {
       updateAchievement(achievementReached + 1);
     } else {
@@ -47,7 +47,7 @@ const AcheivementDialog = (props) => {
       <DialogTitle id="alert-dialog-title">
         {achievements[achievementReached].title}
       </DialogTitle>
-      <Confetti height={achievements[achievementReached].gifHeight}></Confetti>
+      <Confetti></Confetti>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           {achievements[achievementReached].description}
