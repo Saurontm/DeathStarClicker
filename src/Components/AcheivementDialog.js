@@ -4,12 +4,13 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import achievements from "../gameAchievements";
 import Confetti from "./Confetti";
 
 const AcheivementDialog = (props) => {
   const [open, setOpen] = React.useState(false);
+  const [achievementReached, updateAchievement] = useState(0);
   const [isExploding, setIsExploding] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -18,7 +19,7 @@ const AcheivementDialog = (props) => {
   };
 
   const checkForAcheivement = () => {
-    if (props.score >= achievements[props.achievementReached].planets) {
+    if (props.score >= achievements[achievementReached].planets) {
       handleClickOpen();
     }
   };
@@ -31,8 +32,8 @@ const AcheivementDialog = (props) => {
     setOpen(false);
     setTimeout(1000);
 
-    if (props.achievementReached !== 5) {
-      props.updateAchievement(props.achievementReached + 1);
+    if (achievementReached !== 5) {
+      updateAchievement(achievementReached + 1);
     } else {
       window.location.reload(false);
     }
@@ -46,19 +47,19 @@ const AcheivementDialog = (props) => {
       aria-describedby="alert-dialog-description"
     >
       <DialogTitle id="alert-dialog-title">
-        {achievements[props.achievementReached].title}
+        {achievements[achievementReached].title}
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          {achievements[props.achievementReached].description}
+          {achievements[achievementReached].description}
         </DialogContentText>
         <DialogContent></DialogContent>
       </DialogContent>
       <Confetti></Confetti>
-      {achievements[props.achievementReached].gif}
+      {achievements[achievementReached].gif}
       <DialogActions>
         <Button onClick={handleClose} color="primary">
-          {achievements[props.achievementReached].buttonText}
+          {achievements[achievementReached].buttonText}
         </Button>
       </DialogActions>
     </Dialog>
