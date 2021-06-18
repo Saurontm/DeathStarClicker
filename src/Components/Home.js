@@ -1,10 +1,4 @@
-import {
-  LogoImage,
-  GameWrapper,
-  CurrentRate,
-  Credit,
-  Description,
-} from "../styles";
+import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
 import logo from "../the-death-star.png";
 import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
@@ -13,13 +7,7 @@ import PurchasesList from "./PurchasesList";
 import Scoring from "./Scoring";
 import React, { useState, useEffect } from "react";
 import { BiCoinStack } from "react-icons/bi";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Button from "@material-ui/core/Button";
-import ConfettiExplosion from "@reonomy/react-confetti-explosion";
+import AcheivementDialog from "./AcheivementDialog";
 
 function HomePage() {
   const [score, updateScore] = useState(0);
@@ -27,41 +15,8 @@ function HomePage() {
   const [credit, updateCredit] = useState(0);
   const [planetPerClick, increasePerClick] = useState(1);
   const [planetPerSecond, increasePerSecond] = useState(0);
-  const [isExploding, setIsExploding] = React.useState(false);
-  const bigExplodeProps = {
-    force: 0.6,
-    duration: 5000,
-    particleCount: 200,
-    floorHeight: 700,
-    floorWidth: 700,
-  };
-
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setIsExploding(!isExploding);
-    setOpen(true);
-  };
-
-  const checkForAcheivement = () => {
-    if (score >= achievements[achievementReached].planets) {
-      handleClickOpen();
-    }
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setTimeout(1000);
-
-    if (achievementReached !== 5) {
-      updateAchievement(achievementReached + 1);
-    } else {
-      window.location.reload(false);
-    }
-  };
 
   const addToScore = (amount) => {
-    setIsExploding(false);
     updateScore(score + amount);
   };
 
@@ -73,7 +28,6 @@ function HomePage() {
 
       case "deduct":
         updateCredit(credit - amount);
-        // setIsExploding(!isExploding);
 
         break;
 
@@ -99,11 +53,6 @@ function HomePage() {
     }, 1000);
     return () => clearInterval(interval);
   }, [planetPerSecond]);
-
-  useEffect(() => {
-    setIsExploding(false);
-    checkForAcheivement();
-  }, [score]);
 
   return (
     <div>
@@ -139,39 +88,11 @@ function HomePage() {
           updateRate={updateRate}
         ></PurchasesList>
       </GameWrapper>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {achievements[achievementReached].title}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            {achievements[achievementReached].description}
-          </DialogContentText>
-          <DialogContent></DialogContent>
-        </DialogContent>
-        {isExploding && (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <ConfettiExplosion {...bigExplodeProps} />
-          </div>
-        )}
-        {achievements[achievementReached].gif}
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            {achievements[achievementReached].buttonText}
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <AcheivementDialog
+        score={score}
+        achievementReached={achievementReached}
+        updateAchievement={updateAchievement}
+      ></AcheivementDialog>
     </div>
   );
 }
