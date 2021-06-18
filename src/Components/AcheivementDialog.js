@@ -11,11 +11,10 @@ import Confetti from "./Confetti";
 const AcheivementDialog = (props) => {
   const [open, setOpen] = React.useState(false);
   const [achievementReached, updateAchievement] = useState(0);
-  const [isExploding, setIsExploding] = React.useState(false);
 
   const handleClickOpen = () => {
+    console.log(achievements[achievementReached].gif);
     setOpen(true);
-    setIsExploding(!isExploding);
   };
 
   const checkForAcheivement = () => {
@@ -30,7 +29,6 @@ const AcheivementDialog = (props) => {
 
   const handleClose = () => {
     setOpen(false);
-    setTimeout(1000);
 
     if (achievementReached !== 5) {
       updateAchievement(achievementReached + 1);
@@ -49,7 +47,7 @@ const AcheivementDialog = (props) => {
       <DialogTitle id="alert-dialog-title">
         {achievements[achievementReached].title}
       </DialogTitle>
-      <Confetti></Confetti>
+      <Confetti height={achievements[achievementReached].gifHeight}></Confetti>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           {achievements[achievementReached].description}

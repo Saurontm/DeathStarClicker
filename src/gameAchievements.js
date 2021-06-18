@@ -15,16 +15,18 @@ const achievements = [
     planets: 1,
     buttonText: "Let the fun begin!",
     gif: <img id="gif1" src={gif1} alt="gif" />,
+    gifHeight: 210,
   },
   {
     id: 2,
     title: "Wipe Them Out. All Of Them!",
     description:
-      "You have managed to destroy 100 planets. Congratulations on getting the Apprentice achievement, the dark side is a good color on you.",
+      "Congratulations on getting the Apprentice achievement and destroying 100 planets, the dark side is a good color on you.",
     name: "Apprentice",
     planets: 100,
     buttonText: "Keep going!",
     gif: <img id="gif2" src={gif2} alt="gif" />,
+    gifHeight: 295,
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const achievements = [
     planets: 1000,
     buttonText: "Not done yet!",
     gif: <img id="gif3" src={gif3} alt="gif" />,
+    gifHeight: 213,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ const achievements = [
     planets: 5000,
     buttonText: "No… I am your Father!",
     gif: <img id="gif4" src={gif4} alt="gif" />,
+    gifHeight: 225,
   },
 
   {
@@ -56,6 +60,7 @@ const achievements = [
     planets: 10000,
     buttonText: "Unlimited Power!",
     gif: <img id="gif5" src={gif5} alt="gif" />,
+    gifHeight: 212,
   },
   {
     id: 6,
@@ -66,6 +71,7 @@ const achievements = [
     planets: 15000,
     buttonText: "Reset game",
     gif: <img id="gif6" src={gif6} alt="gif" />,
+    gifHeight: 294,
   },
 ];
 export default achievements;
