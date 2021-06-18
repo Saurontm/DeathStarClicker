@@ -6,17 +6,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import React, { useEffect } from "react";
 import achievements from "../gameAchievements";
-import ConfettiExplosion from "@reonomy/react-confetti-explosion";
+import Confetti from "./Confetti";
 
 const AcheivementDialog = (props) => {
-  const bigExplodeProps = {
-    force: 0.6,
-    duration: 4000,
-    particleCount: 200,
-    floorHeight: 600,
-    floorWidth: 600,
-  };
-
   const [open, setOpen] = React.useState(false);
   const [isExploding, setIsExploding] = React.useState(false);
 
@@ -36,7 +28,6 @@ const AcheivementDialog = (props) => {
   }, [props.score]);
 
   const handleClose = () => {
-    setIsExploding(false);
     setOpen(false);
     setTimeout(1000);
 
@@ -63,17 +54,7 @@ const AcheivementDialog = (props) => {
         </DialogContentText>
         <DialogContent></DialogContent>
       </DialogContent>
-      {isExploding && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <ConfettiExplosion {...bigExplodeProps} />
-        </div>
-      )}
+      <Confetti></Confetti>
       {achievements[props.achievementReached].gif}
       <DialogActions>
         <Button onClick={handleClose} color="primary">

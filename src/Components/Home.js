@@ -1,6 +1,5 @@
 import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
 import logo from "../the-death-star.png";
-import achievements from "../gameAchievements";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import PurchasesList from "./PurchasesList";
