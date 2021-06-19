@@ -13,8 +13,10 @@ const AcheivementDialog = (props) => {
   const [achievementReached, updateAchievement] = useState(0);
 
   const handleClickOpen = () => {
-    console.log(achievements[achievementReached].gif);
     setOpen(true);
+    if (achievementReached === 5) {
+      props.increasePerSecond(0);
+    }
   };
 
   const checkForAcheivement = () => {

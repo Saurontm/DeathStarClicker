@@ -6,7 +6,6 @@ class Confetti extends React.Component {
     return false;
   }
   render() {
-    console.log(this.props.height);
     const bigExplodeProps = {
       force: 0.6,
       particleSize: 10,

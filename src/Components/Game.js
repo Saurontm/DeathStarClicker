@@ -11,6 +11,7 @@ import AcheivementDialog from "./AcheivementDialog";
 const Game = () => {
   //score
   const [score, updateScore] = useState(0);
+  // const [gameOver, gameIsOver] = useState(false);
   const addToScore = (amount) => {
     updateScore(score + amount);
   };
@@ -83,7 +84,10 @@ const Game = () => {
           updateRate={updateRate}
         ></PurchasesList>
       </GameWrapper>
-      <AcheivementDialog score={score}></AcheivementDialog>
+      <AcheivementDialog
+        score={score}
+        increasePerSecond={increasePerSecond}
+      ></AcheivementDialog>
     </div>
   );
 };
