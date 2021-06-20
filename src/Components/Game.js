@@ -1,17 +1,15 @@
-import { LogoImage, GameWrapper, CurrentRate, Credit } from "../styles";
-import logo from "../the-death-star.png";
+import { GameWrapper, CurrentRate, Credit } from "../styles";
 import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
-import PurchasesList from "./PurchasesList";
 import Scoring from "./Scoring";
 import React, { useState, useEffect } from "react";
 import { BiCoinStack } from "react-icons/bi";
 import AcheivementDialog from "./AcheivementDialog";
+import Purchases from "./Purchases";
 
 const Game = () => {
   //score
   const [score, updateScore] = useState(0);
-  // const [gameOver, gameIsOver] = useState(false);
   const addToScore = (amount) => {
     updateScore(score + amount);
   };
@@ -33,7 +31,6 @@ const Game = () => {
 
   //increments
   const [planetPerClick, increasePerClick] = useState(1);
-
   const [planetPerSecond, increasePerSecond] = useState(0);
   const updateRate = (planetPerSecond) => {
     increasePerSecond(planetPerSecond);
@@ -73,7 +70,7 @@ const Game = () => {
             ? ", " + planetPerSecond + " planets per second"
             : ""}
         </CurrentRate>
-        <PurchasesList
+        <Purchases
           score={score}
           credit={credit}
           changeCredit={changeCredit}
@@ -82,7 +79,7 @@ const Game = () => {
           planetPerClick={planetPerClick}
           planetPerSecond={planetPerSecond}
           updateRate={updateRate}
-        ></PurchasesList>
+        ></Purchases>
       </GameWrapper>
       <AcheivementDialog
         score={score}

@@ -9,26 +9,14 @@ import achievements from "../gameAchievements";
 import Confetti from "./Confetti";
 
 const AcheivementDialog = (props) => {
+  //open dialog
   const [open, setOpen] = React.useState(false);
-  const [achievementReached, updateAchievement] = useState(0);
-
   const handleClickOpen = () => {
     setOpen(true);
     if (achievementReached === 5) {
       props.increasePerSecond(0);
     }
   };
-
-  const checkForAcheivement = () => {
-    if (props.score >= achievements[achievementReached].planets) {
-      handleClickOpen();
-    }
-  };
-
-  useEffect(() => {
-    checkForAcheivement();
-  }, [props.score]);
-
   const handleClose = () => {
     setOpen(false);
     setTimeout(1000);
@@ -38,6 +26,17 @@ const AcheivementDialog = (props) => {
       window.location.reload(false);
     }
   };
+
+  //current achievement
+  const [achievementReached, updateAchievement] = useState(0);
+  const checkForAcheivement = () => {
+    if (props.score >= achievements[achievementReached].planets) {
+      handleClickOpen();
+    }
+  };
+  useEffect(() => {
+    checkForAcheivement();
+  }, [props.score]);
 
   return (
     <Dialog

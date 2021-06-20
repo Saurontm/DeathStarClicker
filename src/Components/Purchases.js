@@ -3,8 +3,10 @@ import "react-awesome-button/dist/styles.css";
 import "../buttonStyles.css";
 import Purchase from "./Purchase";
 import gameRules from "../gameRules";
+import { PurchasesWrapper } from "../styles";
 
 const Purchases = (props) => {
+  //filter based on credits required for upgrade, and if unlocked
   const purchases = gameRules
     .filter((upgrade) => upgrade.cost <= props.credit && upgrade.status)
     .map((upgrade) => (
@@ -19,7 +21,7 @@ const Purchases = (props) => {
       ></Purchase>
     ));
   return (
-    <div>
+    <PurchasesWrapper>
       {purchases.length > 0 ? (
         <UpgradesTitle> Available upgrades: </UpgradesTitle>
       ) : (
@@ -27,7 +29,7 @@ const Purchases = (props) => {
       )}
 
       <PurchasesStyled>{purchases}</PurchasesStyled>
-    </div>
+    </PurchasesWrapper>
   );
 };
 

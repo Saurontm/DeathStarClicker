@@ -6,9 +6,10 @@ class Confetti extends React.Component {
     return false;
   }
   render() {
+    //confetti style
     const bigExplodeProps = {
       force: 0.6,
-      particleSize: 10,
+      particleSize: 9,
       duration: 3000,
       particleCount: 200,
       floorHeight: 500,

@@ -1,6 +1,6 @@
 import React from "react";
 import { LogoImage } from "../styles";
-import logo from "../the-death-star.png";
+import logo from "../assets/images/the-death-star.png";
 import "react-awesome-button/dist/styles.css";
 import Game from "./Game";
 

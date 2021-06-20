@@ -1,9 +1,9 @@
-import gif1 from "./this-is-where-the-fun-begins.gif";
-import gif2 from "./wipe-them-out-all-of-them.gif";
-import gif3 from "./execute-order-sixty-six.gif";
-import gif4 from "./darth-vader.gif";
-import gif5 from "./unlimited-power.gif";
-import gif6 from "./game-over.gif";
+import gif1 from "./assets/gifs/this-is-where-the-fun-begins.gif";
+import gif2 from "./assets/gifs/wipe-them-out-all-of-them.gif";
+import gif3 from "./assets/gifs/execute-order-sixty-six.gif";
+import gif4 from "./assets/gifs/darth-vader.gif";
+import gif5 from "./assets/gifs/unlimited-power.gif";
+import gif6 from "./assets/gifs/game-over.gif";
 
 const achievements = [
   {

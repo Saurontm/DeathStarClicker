@@ -5,13 +5,15 @@ import "../buttonStyles.css";
 import gameRules from "../gameRules";
 
 const Purchase = (props) => {
+  //upgrades
   const buyUpgrade = () => {
     props.upgrade.status = false;
     props.changeCredit("deduct", props.upgrade.cost);
+    //check if unlocks upgrde
     if (props.upgrade.hasOwnProperty("opens")) {
       gameRules.find((rule) => rule.id === props.upgrade.opens).status = true;
     }
-
+    //type of upgrade
     if (props.upgrade.type === "perClick") {
       props.increasePerClick(props.upgrade.update(props.planetPerClick));
     } else if (props.upgrade.type === "perSecond") {

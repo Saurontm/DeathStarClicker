@@ -5,6 +5,7 @@ import "../buttonStyles.css";
 import AnimatedNumber from "react-animated-numbers";
 
 const Scoring = (props) => {
+  //update score and credit
   const handleUpdate = () => {
     props.addToScore(props.planetPerClick);
     props.changeCredit("add", props.planetPerClick);
