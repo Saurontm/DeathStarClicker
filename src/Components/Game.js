@@ -56,7 +56,7 @@ const Game = () => {
       <GameWrapper>
         <Credit>
           <BiCoinStack color={"#D6B94E"} />
-          {"x " + credit}
+          {" x " + credit}
         </Credit>
         <Scoring
           score={score}

@@ -62,20 +62,21 @@ const rules = [
   {
     id: 7,
     status: false,
-    cost: 600,
+    cost: 1000,
     type: "perSecond",
     title: "Call additional TIE Fighters",
-    description: "Destroys 4 more planets per second for 600 Galactic Credits",
+    description: "Destroys 4 more planets per second for 1000 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 4,
   },
 
   {
     id: 8,
     status: false,
-    cost: 800,
+    cost: 40000,
     type: "perSecond",
     title: "Call additional Command Cruisers",
-    description: "Destroys 8 more planets per second for 800 Galactic Credits",
+    description:
+      "Destroys 8 more planets per second for 40000 Galactic Credits",
     update: (planetPerSecond) => planetPerSecond + 8,
   },
   {
@@ -85,8 +86,39 @@ const rules = [
     type: "perClick",
     title: "Double Superlaser Power",
     description:
-      "Doubles effect of current SuperLaser for 2000 Galactic Credits",
+      "Multiply planets destroyed per click by 8 for 2000 Galactic Credits",
     update: (planetPerClick) => planetPerClick * 8,
+  },
+  {
+    id: 10,
+    status: true,
+    cost: 600,
+    type: "perClick",
+    title: "Use the force",
+    description:
+      "Multiplies planets destroyed per click by 5 for 600 Galactic Credits",
+    update: (planetPerClick) => planetPerClick * 5,
+  },
+
+  {
+    id: 11,
+    status: true,
+    cost: 200000,
+    type: "perClick",
+    title: "Freeze Han Solo in carbonite",
+    description:
+      "Multiplies planets destroyed per click by 10 for 200000 Galactic Credits",
+    update: (planetPerClick) => planetPerClick * 10,
+  },
+  {
+    id: 12,
+    status: true,
+    cost: 80000,
+    type: "perClick",
+    title: "Tell Luke who's the father",
+    description:
+      "Multiplies planets destroyed per click by 10 for 80000 Galactic Credits",
+    update: (planetPerClick) => planetPerClick * 10,
   },
 ];
 export default rules;

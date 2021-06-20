@@ -42,7 +42,7 @@ const achievements = [
     description:
       "Congratulations, you have earned yourself the Darth achievement.",
     name: "Darth",
-    planets: 5000,
+    planets: 50000,
     buttonText: "No… I am your Father!",
     gif: <img id="gif4" src={gif4} alt="gif" />,
   },
@@ -53,7 +53,7 @@ const achievements = [
     description:
       "The galaxy just found itself a new Emperor. Congratulations on getting the Emperor achievement.",
     name: "Emperor",
-    planets: 10000,
+    planets: 1000000,
     buttonText: "Unlimited Power!",
     gif: <img id="gif5" src={gif5} alt="gif" />,
   },
@@ -63,7 +63,7 @@ const achievements = [
     description:
       "Congratulations. You are now the ruler of an empty galaxy, no more planets to destroy.",
     name: "Emperor",
-    planets: 15000,
+    planets: 100000000,
     buttonText: "Reset game",
     gif: <img id="gif6" src={gif6} alt="gif" />,
   },
